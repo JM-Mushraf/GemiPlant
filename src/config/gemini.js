@@ -8,7 +8,7 @@ import {
   const API_KEY = import.meta.env.VITE_MY_API_KEY;
   
   async function runChat(prompt) {
-    const genAI = new GoogleGenerativeAI("AIzaSyC5Kcip0OEimdvr4sqXoui7whYDH5gxSXY"); // Use API_KEY from environment variables
+    const genAI = new GoogleGenerativeAI("API_key"); // Use API_KEY 
     const model = genAI.getGenerativeModel({ model: MODEL_NAME });
   
     const generationConfig = {
