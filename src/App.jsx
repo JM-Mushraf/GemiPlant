@@ -1,13 +1,12 @@
 import './App.css';
 import Sidebar from './components/sidebar/Sidebar';
-import Main from './components/main/Main';
+import Home from './components/home/Home.jsx';
 
 
 function App() {
   return (
     <>
-     <Sidebar/> 
-     <Main/>
+     <Home/>
     </>
   );
 }

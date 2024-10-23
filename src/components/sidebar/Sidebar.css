@@ -1,57 +1,32 @@
-
 .sidebar {
-  background-color: #2d2d2d;
-  width: 80px;
-  height: 100vh;
+  width: 250px;
+  /* background-color: #2e2e2e; */
+  color: white;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  padding: 20px 0;
+  padding: 20px;
+  border-right: 1px solid #444; 
   transition: width 0.3s ease;
 }
 
-.sidebar:hover {
-  width: 250px;
+.sidebar.extended {
+  width: 300px;
 }
 
-.sidebar .top {
+.top {
   display: flex;
-  flex-direction: column;
+  justify-content: space-between;
   align-items: center;
-}
-
-.sidebar .bottom {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.sidebar-icons {
-  color: #28a745; 
-  margin-bottom: 20px;
-  cursor: pointer;
-  transition: color 0.3s ease;
-}
-
-.sidebar-icons:hover {
-  color: #34d058; 
 }
 
 .new-chat {
   display: flex;
   align-items: center;
-  gap: 10px;
-  margin-bottom: 20px;
   cursor: pointer;
 }
 
-.new-chat p {
-  color: #fff;
-  display: none;
-}
-
-.sidebar:hover .new-chat p {
-  display: inline-block;
+.sidebar-icons {
+  color: #28a745; 
 }
 
 .recent {
@@ -59,32 +34,45 @@
 }
 
 .recent-title {
-  color: #fff;
-  font-size: 18px;
+  font-weight: bold;
   margin-bottom: 10px;
 }
 
 .recent-entry {
   display: flex;
   align-items: center;
+  justify-content: space-between; 
+  padding: 10px;
+  /* background: #3c3c3c; */
+  border-radius: 5px; 
   margin-bottom: 10px;
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  transition: background 0.2s ease;
 }
-
-.recent-entry p {
-  color: #fff;
-  margin-left: 10px;
-  font-size: 14px;
-  display: none;
+.recent-entry p{
+  margin-left: 15px;
+  margin-right: 5px;
 }
-
-.sidebar:hover .recent-entry p {
-  display: inline-block;
-}
-
 .recent-entry:hover {
-  background-color: #3e6f43;
-  padding: 10px;
-  border-radius: 8px;
+  background: linear-gradient(135deg,rgba(40, 150, 60, 0.434), rgba(30, 30, 30, 0.9)); 
 }
+.bottom {
+  margin-top: auto; 
+}
+
+.bottom-item {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.bottom-item:hover {
+  background: linear-gradient(135deg,rgba(40, 150, 60, 0.434), rgba(30, 30, 30, 0.9));
+}
+.delete-icon {
+  cursor: pointer; 
+  margin-left: 10px; 
+  color:#28a745; 
+}
+

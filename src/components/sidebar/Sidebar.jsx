@@ -1,48 +1,50 @@
-import React, { useContext, useState } from "react";
+import React, { useState } from "react";
 import "./Sidebar.css";
-import { MdMenuBook } from "react-icons/md";
-import { FaPlus } from "react-icons/fa";
-import { FaRegMessage } from "react-icons/fa6";
-import { FaLeaf } from "react-icons/fa";
-import { FaHistory } from "react-icons/fa";
-import { IoSettings } from "react-icons/io5";
-import { Context } from "../../context/context";
+import { BiMenuAltRight } from "react-icons/bi"; 
+import { AiOutlineMessage } from "react-icons/ai"; 
+import { FaRegMessage } from "react-icons/fa6"; 
+import { FaLeaf } from "react-icons/fa"; 
+import { FaTrash } from "react-icons/fa";
 
-const Sidebar = () => {
+const Sidebar = ({ onSent, previousPrompt, setRecentPrompt, newChat, deletePrompt }) => {
   const [extend, setExtend] = useState(false);
-  const { onSent, previousPrompt, setRecentPrompt, newChat, about } = useContext(Context);
 
-  const loadPrompt = async (prompt) => {
+  const loadPrompt = (prompt) => {
     setRecentPrompt(prompt);
-    await onSent(prompt);
+    onSent(prompt);
+  };
+
+  const about = () => {
+    alert("This app provides plant growing information, climate advice, and more!");
   };
 
   return (
-    <div className="sidebar">
+    <div className={`sidebar ${extend ? "extended" : ""}`}>
       <div className="top">
-        <MdMenuBook className="sidebar-icons menu" size={40} onClick={() => setExtend((prev) => !prev)} />
-        <div onClick={() => newChat()} className="new-chat">
-          <FaPlus className="sidebar-icons" size={30} />
-          {extend ? <p>New Search</p> : null}
+        <BiMenuAltRight className="sidebar-icons" size={40} onClick={() => setExtend((prev) => !prev)} />
+        <div onClick={newChat} className="new-chat">
+          <AiOutlineMessage className="sidebar-icons" size={30} />
+          {extend && <p>New Chat</p>}
         </div>
-
-        {extend ? (
-          <div className="recent">
-            <p className="recent-title">Recents</p>
-            {previousPrompt.map((item, index) => (
-              <div key={index} onClick={() => loadPrompt(item)} className="recent-entry">
-                <FaRegMessage size={30} />
-                <p>{item.slice(0, 18)}</p>
-              </div>
-            ))}
-          </div>
-        ) : null}
       </div>
 
+      {extend && (
+        <div className="recent">
+          <p className="recent-title">Recents</p>
+          {previousPrompt.map((item, index) => (
+            <div key={index} className="recent-entry">
+              <FaRegMessage size={30} onClick={() => loadPrompt(item)} />
+              <p>{`${item.slice(0, 18)}`}</p>
+              <FaTrash onClick={() => deletePrompt(item)} className="delete-icon" size={20} />
+            </div>
+          ))}
+        </div>
+      )}
+
       <div className="bottom">
-        <div className="bottom-item recent-entry">
-          <FaLeaf className="sidebar-icons" size={30} onClick={() => about()} />
-          {extend ? <p>Help</p> : null}
+        <div className="bottom-item recent-entry" onClick={about}>
+          <FaLeaf className="sidebar-icons" size={30} />
+          {extend && <p>Help</p>}
         </div>
       </div>
     </div>

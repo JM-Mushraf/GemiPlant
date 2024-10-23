@@ -1,0 +1,220 @@
+body {
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 0;
+  color: #e0e0e0;
+}
+
+.bg {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), 
+              url('../../../public/images/GemiPlant.jpg') center/cover no-repeat;
+  opacity: 1; 
+  display: flex;
+  justify-content:space-around;
+}
+
+.main {
+  padding: 20px;
+  max-width: 1200px;
+  margin: auto;
+  border-radius: 12px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
+  overflow-y: auto;
+  position: relative;
+  border: 2px solid #28a7466b;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+.main .search-box {
+  display: flex;
+  align-items: center;
+  border: 2px solid #28a7466b;
+  border-radius: 8px;
+  padding: 10px;
+  max-width: 600px;
+  margin: 20px auto;
+  position: sticky;
+  top: 19%;
+  z-index: 100;
+}
+
+.search-box input {
+  background: none;
+  border: none;
+  color: #fff;
+  padding: 10px;
+  font-size: 16px;
+  outline: none;
+  width: calc(100% - 50px);
+}
+.search-box :focus {
+  outline: none; 
+  box-shadow: 0 0 5px #0acb37, 0 0 10px rgba(10, 203, 55, 0.5);
+  border: 2px solid #0acb37; 
+  transition: box-shadow 0.3s ease, border 0.3s ease;
+}
+
+.search-box input::placeholder {
+  color: #ffffffef;
+  opacity: 1;
+  font-size: 17px;
+}
+
+.search-box .input-icons {
+  color: #0acb37;
+  cursor: pointer;
+  padding-left: 10px;
+  transition: color 0.3s ease;
+}
+
+.search-box .input-icons:hover {
+  color: #34d058;
+}
+
+.main-container {
+  margin-top: 20px;
+  color: #fff;
+  overflow: auto;
+}
+
+.greet {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.greet{
+  font-size: 24px;
+  margin: 10px 0;
+}
+.greet :nth-child(1){
+  /* background: linear-gradient(135deg, rgba(40, 150, 60, 0.992), rgba(30, 30, 30, 0.992));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-size: 26px;
+  font-weight: bolder; */
+  color: white;
+  font-size: 26px;
+  font-weight:500;
+}
+.cards {
+  display: flex;
+  justify-content: space-around;
+  gap: 15px;
+}
+
+.card {
+  background: linear-gradient(135deg, rgba(30, 30, 30, 0.9), rgba(40, 150, 60, 0.434));
+  padding: 30px;
+  border-radius: 12px;
+  text-align: center;
+  width: 30%;
+  cursor: pointer;
+  transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  background-color: rgba(53, 53, 53, 0.85);
+  transform: scale(1.05);
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.card h1 {
+  font-size: 20px;
+  color: #fff;
+}
+
+.result {
+  width: 100%;
+  max-width: 800px;
+  max-height: 57vh;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  margin: 20px auto;
+  border: 2px solid rgba(40, 167, 70, 0.42);
+  backdrop-filter: blur(3px);
+  overflow-y: auto; 
+  overflow-x: hidden;
+}
+
+
+.result-title {
+  display: flex;
+  align-items: center;
+  font-size: 22px;
+  font-weight: 500;
+  margin-bottom: 10px;
+  color: #28a746;
+  position: sticky;
+  top: 0px;
+}
+.result-title p{
+  text-decoration: underline;
+}
+.result-title svg {
+  margin-right: 10px;
+}
+
+.result-data ul {
+  list-style-type: disc;
+  padding-left: 20px;
+}
+
+.result-data ul li {
+  margin-bottom: 10px;
+  line-height: 1.6;
+}
+
+.loader {
+  display: flex;
+  justify-content: center;
+}
+
+.loader hr {
+  border: 5px solid #28a745;
+  margin: 5px 0;
+  width: 50px;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.slider-text {
+  position: absolute;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: rgba(40, 167, 70, 0.8);
+  color: #fff;
+  padding: 10px 20px; 
+  border-radius: 8px;
+  font-size: 24px;
+  font-weight: bold;
+  animation: popup 1s ease forwards;
+  opacity: 0; 
+}
+
+@keyframes popup {
+  0% {
+    transform: translateX(-50%) translateY(-20px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(-50%) translateY(0);
+    opacity: 1;
+  }
+}
