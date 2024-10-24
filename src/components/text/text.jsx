@@ -21,15 +21,14 @@ const GemiPlant = () => {
     return (
         <div className='txt_wrap'>
             <div className="text-wrapper" id="textWrapper">
-                <span>G</span>
-                <span>R</span>
-                <span>E</span>
-                <span>E</span>
-                <span>N</span>
-                <span>G</span>
+                <span>C</span>
                 <span>R</span>
                 <span>O</span>
-                <span>W</span>
+                <span>P</span>
+                <span>A</span>
+                <span>N</span>
+                <span>N</span>
+                <span>A</span>
             </div>
         </div>
     );

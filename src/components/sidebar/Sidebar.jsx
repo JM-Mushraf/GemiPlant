@@ -42,9 +42,11 @@ const Sidebar = ({ onSent, previousPrompt, setRecentPrompt, newChat, deletePromp
       )}
 
       <div className="bottom">
-        <div className="bottom-item recent-entry" onClick={about}>
-          <FaLeaf className="sidebar-icons" size={30} />
-          {extend && <p>Help</p>}
+        <div className="bottom-item-recent-entry" onClick={about}>
+          {/* <FaLeaf className="sidebar-icons" size={30} /> */}
+          {/* <span className="sidebar-icons"></span> */}
+          <img src="../../../public/images/cropNowIcon.png" alt="" className="sidebar-iconsimg"/>
+         <p>Help</p>
         </div>
       </div>
     </div>

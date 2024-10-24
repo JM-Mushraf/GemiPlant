@@ -87,6 +87,7 @@ const Main = () => {
         setRecentPrompt={setRecentPrompt} 
         newChat={newChat} 
         deletePrompt={deletePrompt}
+        className="sidebar"
       />
       <div className="bg"> </div>
       <div className="main">
@@ -107,7 +108,7 @@ const Main = () => {
           {!showResult ? (
             <>
               <div className="greet">
-                <p><span>Welcome!</span></p>
+                <p><span>Vanakam!</span></p>
                 <p>Discover the best plants for your environment!</p>
               </div>
               <div className="cards">
